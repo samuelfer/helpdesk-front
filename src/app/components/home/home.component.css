@@ -1,7 +1,11 @@
 .card {
     width: 90%;
-    margin: 1rem auto;
+    margin: .5rem auto;
     background: rgb(121 88 159);
+    color: white;
+}
+
+mat-card-subtitle {
     color: white;
 }
 
