@@ -1,7 +1,8 @@
 .card {
     width: 90%;
     margin: 1rem auto;
-    background-color: rgb(235, 235, 235);
+    background: rgb(121 88 159);
+    color: white;
 }
 
 img {
