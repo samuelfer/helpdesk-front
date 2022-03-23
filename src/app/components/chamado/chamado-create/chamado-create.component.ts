@@ -83,5 +83,4 @@ export class ChamadoCreateComponent implements OnInit {
       && this.titulo.valid && this.observacoes.valid
       && this.tecnico.valid && this.cliente.valid;
   }
-
 }
