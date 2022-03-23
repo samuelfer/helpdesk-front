@@ -1,1 +1,59 @@
-<p>chamado-create works!</p>
+<div class="container mat-elevation-z8">
+    <h1>Cadastrar de chamado</h1>
+
+    <form class="form">
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Título do chamado</mat-label>
+          <input matInput placeholder="Ex. Erro na listagem de clientes">
+        </mat-form-field>
+
+        <div class="status-prioridade">
+            <mat-form-field appearance="outline">
+                <mat-label>Selecione o status</mat-label>
+                <mat-select>
+                  <mat-option value="0">ABERTO</mat-option>
+                  <mat-option value="1">EM ANDAMENTO</mat-option>
+                  <mat-option value="2">ENCERRADO</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Selecione a prioridade</mat-label>
+                <mat-select>
+                  <mat-option value="0">BAIXA</mat-option>
+                  <mat-option value="1">MÉDIA</mat-option>
+                  <mat-option value="2">ALTA</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="tecnico">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Selecione o técnico</mat-label>
+                <mat-select>
+                  <mat-option value="0">ssss</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="cliente">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Selecione o cliente</mat-label>
+                <mat-select>
+                  <mat-option value="0">ssss</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Observação</mat-label>
+            <textarea class="observacao" matInput placeholder="Ex. Estou com problema para listar os clientes..."></textarea>
+        </mat-form-field>
+
+        <button (click)="create()" [disabled]="!validaCampos()" mat-flat-button class="mat-elevation-z4 color-puple">Cadastrar</button>
+        <button routerLink="../" mat-button class="mat-elevation-z4">Cancelar</button>
+
+    </form>
+
+</div>

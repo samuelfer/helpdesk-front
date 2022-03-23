@@ -35,8 +35,7 @@ export class ClienteCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  
+ 
   create(): void {
     this.clienteService.create(this.cliente).subscribe(() => {
       this.toast.success('cliente cadastrado com sucesso', 'Cadastro');
