@@ -5,13 +5,15 @@
 
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Título do chamado</mat-label>
-          <input matInput placeholder="Ex. Erro na listagem de clientes">
+          <input [formControl]="titulo" required
+            matInput placeholder="Ex. Erro na listagem de clientes"
+            >
         </mat-form-field>
 
         <div class="status-prioridade">
             <mat-form-field appearance="outline">
                 <mat-label>Selecione o status</mat-label>
-                <mat-select>
+                <mat-select [formControl]="status" required>
                   <mat-option value="0">ABERTO</mat-option>
                   <mat-option value="1">EM ANDAMENTO</mat-option>
                   <mat-option value="2">ENCERRADO</mat-option>
@@ -20,7 +22,7 @@
 
             <mat-form-field appearance="outline">
                 <mat-label>Selecione a prioridade</mat-label>
-                <mat-select>
+                <mat-select [formControl]="prioridade" required>
                   <mat-option value="0">BAIXA</mat-option>
                   <mat-option value="1">MÉDIA</mat-option>
                   <mat-option value="2">ALTA</mat-option>
@@ -31,7 +33,7 @@
         <div class="tecnico">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Selecione o técnico</mat-label>
-                <mat-select>
+                <mat-select [formControl]="tecnico" required>
                   <mat-option value="0">ssss</mat-option>
                 </mat-select>
             </mat-form-field>
@@ -40,7 +42,7 @@
         <div class="cliente">
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Selecione o cliente</mat-label>
-                <mat-select>
+                <mat-select [formControl]="cliente" required>
                   <mat-option value="0">ssss</mat-option>
                 </mat-select>
             </mat-form-field>
@@ -48,7 +50,7 @@
 
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Observação</mat-label>
-            <textarea class="observacao" matInput placeholder="Ex. Estou com problema para listar os clientes..."></textarea>
+            <textarea [formControl]="descricao" required class="descricao" matInput placeholder="Ex. Estou com problema para listar os clientes..."></textarea>
         </mat-form-field>
 
         <button (click)="create()" [disabled]="!validaCampos()" mat-flat-button class="mat-elevation-z4 color-puple">Cadastrar</button>

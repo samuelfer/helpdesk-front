@@ -18,11 +18,16 @@
     width: 49%;
 }
 
-.observacao {
+.descricao {
     min-height: 2rem;
     max-height: 10rem;
 }
 
 button {
     margin-top: .5rem;
+}
+
+.color-puple {
+    background: rgb(121 88 159);
+    color: white
 }
