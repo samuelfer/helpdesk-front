@@ -1,8 +1,10 @@
 <div class="container"> 
     <form class="form mat-elevation-z8">
-        <h1>Controle de Chamados</h1>
+        <div class="container-fluid">
+            <h1 class="mat-elevation-z8">Marha - HelpDesk</h1>  
+        </div>
         <img src="assets/img/login-image.svg" alt="Sistema de Controle de Chamados">
-        <mat-form-field class="full-width" appearance="fill">
+        <mat-form-field class="full-width" appearance="outline">
           <mat-label>Email</mat-label>
           <input 
           [formControl]="email"
@@ -13,7 +15,7 @@
           >
         </mat-form-field>
        
-        <mat-form-field class="full-width" appearance="fill">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Senha</mat-label>
             <input 
             [formControl]="senha"
