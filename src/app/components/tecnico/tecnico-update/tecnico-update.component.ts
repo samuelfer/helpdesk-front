@@ -40,11 +40,13 @@ export class TecnicoUpdateComponent implements OnInit {
 
   findById(): void {
     this.tecnicoService.findById(this.tecnico.id).subscribe(response => {
+      response.perfis = [];
       this.tecnico = response;
     });
   }
   
   update(): void {
+    console.log('This ', this.tecnico)
     this.tecnicoService.update(this.tecnico).subscribe(() => {
       this.toast.success('Técnico atualizado com sucesso', 'Atualização');
       this.router.navigate(['tecnicos']);
@@ -65,6 +67,7 @@ export class TecnicoUpdateComponent implements OnInit {
     } else {
       this.tecnico.perfis.push(perfil);
     }
+    console.log(this.tecnico)
   }
   
   validaCampos(): boolean {
