@@ -43,6 +43,8 @@ export class ClienteUpdateComponent implements OnInit {
     this.clienteService.findById(this.cliente.id).subscribe(response => {
       response.perfis = [];
       this.cliente = response;
+    }, ex => {
+      this.toast.error(ex.error.error);
     });
   }
   

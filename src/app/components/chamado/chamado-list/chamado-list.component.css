@@ -20,3 +20,7 @@ mat-radio-group {
     justify-content: space-around;
     margin-bottom: 1rem;
 }
+
+.color-purple {
+    color: rgb(121 88 159);
+}

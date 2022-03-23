@@ -4,7 +4,7 @@ import { Tecnico } from './../../../models/tecnico';
 import { Cliente } from './../../../models/cliente';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { ChamadoService } from './../../../services/chamado.service';
@@ -44,14 +44,27 @@ export class ChamadoUpdateComponent implements OnInit {
     private tecnicoService: TecnicoService,
     private toast: ToastrService,
     private router: Router,
+    private activedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+    this.chamado.id = this.activedRoute.snapshot.paramMap.get('id');
+    this.findById();
+
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
-  create(): void {
+  findById(): void {
+    this.chamadoService.findById(this.chamado.id).subscribe(response => {
+      this.chamado = response;
+    }, ex => {
+      this.toast.error(ex.error.error);
+    });
+  }
+  
+
+  update(): void {
     this.chamadoService.update(this.chamado).subscribe(() => {
       this.toast.success('Chamado atualizado com sucesso', 'Atualização');
       this.router.navigate(['chamados']);
@@ -82,6 +95,26 @@ export class ChamadoUpdateComponent implements OnInit {
     return this.prioridade.valid && this.status.valid 
       && this.titulo.valid && this.observacoes.valid
       && this.tecnico.valid && this.cliente.valid;
+  }
+
+  getStatus(status: any): string {
+    if (status == '0') {
+      return 'ABERTO';
+    } else if (status == '1') {
+      return 'EM ANDAMENTO';
+    } else {
+      return 'ENCERRADO';
+    }
+  }
+
+  getPrioridade(prioridade: any): string {
+    if (prioridade == '0') {
+      return 'BAIXA';
+    } else if (prioridade == '1') {
+      return 'MÉDIA';
+    } else {
+      return 'ALTA';
+    }
   }
 
 }
