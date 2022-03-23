@@ -1,0 +1,25 @@
+.container {
+    width: 60rem;
+    margin: auto;
+    padding: 1rem 1rem 3rem 1rem;
+    border-radius: .6rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.section {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-top: .5rem;
+}
+
+.color-puple {
+    background: rgb(121 88 159);
+    color: white
+}
