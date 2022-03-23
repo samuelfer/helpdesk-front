@@ -11,6 +11,7 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   styleUrls: ['./tecnico-update.component.css']
 })
 export class TecnicoUpdateComponent implements OnInit {
+  
   tecnico: Tecnico = {
     id: '',
     nome: '',
@@ -46,7 +47,6 @@ export class TecnicoUpdateComponent implements OnInit {
   }
   
   update(): void {
-    console.log('This ', this.tecnico)
     this.tecnicoService.update(this.tecnico).subscribe(() => {
       this.toast.success('Técnico atualizado com sucesso', 'Atualização');
       this.router.navigate(['tecnicos']);
