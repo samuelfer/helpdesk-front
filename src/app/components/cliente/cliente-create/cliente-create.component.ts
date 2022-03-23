@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Cliente } from './../../../models/cliente';
+import { Cliente } from '../../../models/cliente';
 import { FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from 'src/app/services/cliente.service';

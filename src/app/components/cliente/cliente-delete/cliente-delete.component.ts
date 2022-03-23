@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ClienteService } from 'src/app/services/cliente.service';
 
-import { Cliente } from './../../../models/cliente';
+import { Cliente } from '../../../models/cliente';
 
 @Component({
   selector: 'app-cliente-delete',
